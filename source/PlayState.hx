@@ -6,7 +6,7 @@ import hx_arabic_shaper.bidi.UBA;
 import flixel.util.FlxColor;
 import flixel.text.FlxText;
 import flixel.FlxState;
-
+import flixel.FlxG;
 import openfl.Lib;
 
 class PlayState extends FlxState
@@ -29,9 +29,9 @@ class PlayState extends FlxState
         }
 
         var littleText:FlxText = new FlxText(5, FlxG.height - 24, 0, "Hello World");
-		littleText.scrollFactor.set();
-		littleText.setFormat(Paths.font("vcr.ttf"), 26, FlxColor.WHITE, LEFT, FlxTextBorderStyle.OUTLINE, FlxColor.BLACK);
-		add(littleText);
+	littleText.scrollFactor.set();
+	littleText.setFormat(Paths.font("vcr.ttf"), 26, FlxColor.WHITE, LEFT, FlxTextBorderStyle.OUTLINE, FlxColor.BLACK);
+	add(littleText);
     }
 
     override public function update(elapsed:Float)
