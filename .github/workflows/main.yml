@@ -37,7 +37,7 @@ jobs:
           haxelib install flixel-ui
           haxelib install flixel-addons
           haxelib install flixel-tools
-          haxelib install hx_arabic_reshaper
+          haxelib install hx_arabic_shaper
           haxelib list
       - name: Create Version Tag
         run: echo "${{github.run_id}}" > VERSION
@@ -70,7 +70,7 @@ jobs:
           haxelib install flixel-ui
           haxelib install flixel-addons
           haxelib install flixel-tools
-          haxelib install hx_arabic_reshaper
+          haxelib install hx_arabic_shaper
           haxelib list
         shell: cmd
       - name: Create Version Tag
@@ -105,7 +105,7 @@ jobs:
           haxelib install flixel-ui
           haxelib install flixel-addons
           haxelib install flixel-tools
-          haxelib install hx_arabic_reshaper
+          haxelib install hx_arabic_shaper
           haxelib list
       - name: Create Version Tag
         run: echo "${{github.run_id}}" > VERSION
