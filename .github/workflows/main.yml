@@ -20,7 +20,7 @@ jobs:
     # Steps represent a sequence of tasks that will be executed as part of the job
     steps:
       # Checks-out your repository under $GITHUB_WORKSPACE, so your job can access it
-      - uses: actions/checkout@v2
+      - uses: actions/checkout@main
 
       - uses: krdlab/setup-haxe@master
         with:
@@ -37,13 +37,14 @@ jobs:
           haxelib install flixel-ui
           haxelib install flixel-addons
           haxelib install flixel-tools
+          haxelib install hx_arabic_reshaper
           haxelib list
       - name: Create Version Tag
         run: echo "${{github.run_id}}" > VERSION
       - name: Compile Linux
         run: haxelib run lime build Project.xml linux --app-version="4.0.0-${{ github.run_id}}"
       - name: Publish Linux Artifact
-        uses: actions/upload-artifact@v2.2.4
+        uses: actions/upload-artifact@main
         with:
           name: linuxBuild
           path: 'export/release/linux/bin'
@@ -52,7 +53,7 @@ jobs:
 
     steps:
       # Checks-out your repository under $GITHUB_WORKSPACE, so your job can access it
-      - uses: actions/checkout@v2.3.0
+      - uses: actions/checkout@main
 
       - uses: krdlab/setup-haxe@master
         with:
@@ -69,6 +70,7 @@ jobs:
           haxelib install flixel-ui
           haxelib install flixel-addons
           haxelib install flixel-tools
+          haxelib install hx_arabic_reshaper
           haxelib list
         shell: cmd
       - name: Create Version Tag
@@ -76,7 +78,7 @@ jobs:
       - name: Compile
         run: haxelib run lime build windows --app-version="4.0.0-${{ github.run_id}}"
       - name: Publish Artifact
-        uses: actions/upload-artifact@v2.2.4
+        uses: actions/upload-artifact@main
         with:
           name: windowsBuild
           path: export/release/windows/bin
@@ -85,7 +87,7 @@ jobs:
 
     steps:
       # Checks-out your repository under $GITHUB_WORKSPACE, so your job can access it
-      - uses: actions/checkout@v2
+      - uses: actions/checkout@main
 
       - uses: krdlab/setup-haxe@master
         with:
@@ -103,13 +105,14 @@ jobs:
           haxelib install flixel-ui
           haxelib install flixel-addons
           haxelib install flixel-tools
+          haxelib install hx_arabic_reshaper
           haxelib list
       - name: Create Version Tag
         run: echo "${{github.run_id}}" > VERSION
       - name: Compile
         run: haxelib run lime build mac --app-version="4.0.0-${{ github.run_id}}"
       - name: Publish Artifact
-        uses: actions/upload-artifact@v2.2.4
+        uses: actions/upload-artifact@main
         with:
           name: macBuild
           path: export/release/macos/bin
